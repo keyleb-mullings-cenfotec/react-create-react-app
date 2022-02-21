@@ -1,34 +1,23 @@
 import React from "react";
+import TableBody from "./TableBody";
+import TableHeader from "./TableHeader";
 
 class Table extends React.Component {
+
     render() {
+        const {characters} = this.props;
         return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Job</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Teacher</td>
-                    </tr>
-                    <tr>
-                        <td>Sarah</td>
-                        <td>Doctor</td>
-                    </tr>
-                    <tr>
-                        <td>Trish</td>
-                        <td>Judge</td>
-                    </tr>
-                    <tr>
-                        <td>Duke</td>
-                        <td>NBA player</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <table>
+                    <TableHeader />
+                    <TableBody characters={characters} />
+                </table>
+                <hr />
+                <table>
+                    <TableHeader />
+                    <TableBody characters={characters} />
+                </table>
+            </div>
         );
     }
 }
